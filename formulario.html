@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <head>
     <script language='javascript'>
-        var x=0
-        function hide_est(x){
-            document.getElementById()
+        function hide_monthBar(){
+            if(navigator.userAgent.includes('Chrome')){
+                var elm = document.getElementById("lista_meses");
+                elm.parentNode.removeChild(elm);
+            }
         }
+        
     </script>
     <style>
         input{
@@ -17,11 +20,9 @@
             -moz-border-radius: 5px;
             -webkit-boder-radius: 5px;
         }
-        
-
     </style>
 </head>
-<body>
+<body onload='hide_monthBar()'>
     <!--Pagina Formulario Datos Usuario-->
     <b style="font-size: 15px; font-family: Arial, Helvetica, sans-serif;">Rellena tu CV</b>
     <br>
@@ -96,9 +97,26 @@
                 <option value='Vichada'>Vichada</option>
             </select><br>
             <label for='f_nacimiento'>Fecha de nacimiento</label><br>
-            <input type='text' id='f_nacimiento_dia' nombre='f_nacimiento_dia' valor=''>
+            <input type='number' id='f_nacimiento_dia' nombre='f_nacimiento_dia' max='31' min='1' size='5'>
+            <span id='lista_meses'>
+                <label>de</label>
+                <select id='f_nacimiento_mes' name='f_nacimiento_mes'>
+                    <option value='Enero'>Enero</option>
+                    <option value='Febrero'>Febrero</option>
+                    <option value='Marzo'>Marzo</option>
+                    <option value='Abril'>Abril</option>
+                    <option value='Mayo'>Mayo</option>
+                    <option value='Junio'>Junio</option>
+                    <option value='Julio'>Julio</option>
+                    <option value='Agosto'>Agosto</option>
+                    <option value='Septiembre'>Septiembre</option>
+                    <option value='Octubre'>Octubre</option>
+                    <option value='Noviembre'>Noviembre</option>
+                    <option value='Diciembre'>Diciembre</option>
+                    </select>
+            </span>
             <label>de</label>
-            <label>de</label>
+            <input type='month' id='f_nacimiento_ano' nombre='f_nacimiento_ano'>
         </fieldset>
 
     </from>
