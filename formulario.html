@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <head>
+    <meta charset='UTF-8'>
+    <title>Formulario</title>
     <script language='javascript'>
+        function enviar(){
+            window.location.href='integrantes.html';
+        };
         function hide_monthBar(){
             if(navigator.userAgent.includes('Chrome')){
                 var elm = document.getElementById("lista_meses");
@@ -9,10 +14,10 @@
         }
         function on_load(){
             hide_monthBar();
-
         }
-        
-        
+        function reload(){
+            window.location.href='formulario.html';
+        }
     </script>
     <style>
         input{
@@ -26,6 +31,27 @@
             border-radius: 5px;
             -moz-border-radius: 5px;
             -webkit-boder-radius: 5px;
+        }
+        textarea{
+            resize: none;
+            overflow: auto;
+            scrollbar-width: thin;
+            scrollbar-color: rgb(255, 166, 0) white;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 12px;
+        }
+        textarea::-webkit-scrollbar{
+            width:6px;
+        }
+
+        textarea::-webkit-scrollbar-thumb {
+            background-color: orange;    /* color of the scroll thumb */
+            border-radius: 20px;       /* roundness of the scroll thumb */
+        }
+        textarea:focus { 
+            outline: none;
+            border-color:rgb(255, 166, 0);
+            box-shadow: 0 0 1px rgb(0, 0, 0);
         }
     </style>
 </head>
@@ -127,7 +153,7 @@
                 <label>de</label>
                 <input type='month' id='f_nacimiento_ano' nombre='f_nacimiento_ano'><br>
                 <label for='temas_interes'>Temas de Interes</label><br>
-                <textarea readonly='True' rows='6' cols="40">
+                <textarea form='form' id='my_textA' rows='6' cols="40">
 Administracion de bases de Datos
 Analisis y programacion
 Arquitectura
@@ -140,6 +166,8 @@ Sistemas
 Telecomunicaciones
                 </textarea>
             </fieldset>
+            <input type="submit" id='enviar' value='Enviar Datos' onclick="enviar()">
+            <input type="reset" id='reset' value='Borrar Datos Introducidos' onclick="reload()">
         </from>
         </div>
     </div>
