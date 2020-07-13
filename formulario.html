@@ -5,119 +5,142 @@
             if(navigator.userAgent.includes('Chrome')){
                 var elm = document.getElementById("lista_meses");
                 elm.parentNode.removeChild(elm);
-            }
+            };
         }
+        function on_load(){
+            hide_monthBar();
+
+        }
+        
         
     </script>
     <style>
         input{
+            border:1px solid grey;
             border-radius: 5px;
             -moz-border-radius: 5px;
             -webkit-boder-radius: 5px;
         }
         select{
+            border:1px solid grey;
             border-radius: 5px;
             -moz-border-radius: 5px;
             -webkit-boder-radius: 5px;
         }
     </style>
 </head>
-<body onload='hide_monthBar()'>
+<body onload='on_load()'>
     <!--Pagina Formulario Datos Usuario-->
-    <b style="font-size: 15px; font-family: Arial, Helvetica, sans-serif;">Rellena tu CV</b>
-    <br>
-    <br>
-    <from>
-        <label for='fname'>Nombre</label><br>
-        <input type='text' id='fname' name='fname' size='40'><br>
-        <label for='lname'>Apellidos</label><br>
-        <input type='text' id='lname' name='lname' size='40'><br>
-        <label for='password'>Contraseña</label><br>
-        <input type='password' id='password' name='password' size='40'><br>
+    <div id='formulario' style="text-align: center;">
+        <div style='display: inline-block; text-align: left;'>
+        <b style="font-size: 15px; font-family: Arial, Helvetica, sans-serif;">Rellena tu CV</b>
         <br>
-        <label for='confirm_password'>Confirme su Contraseña</label><br>
-        <input type='password' id='confirm_password' name='confirm_password' size='40'><br>
-        <label for='select_id'>Identificacion</label><br>
-        <select id='select_id' name='select_id'>
-            <option value='TI'>TI</option>
-            <option value='CC'>CC</option>
-            <option value='CE'>CE</option>
-        </select>
-        <input type='text' id='num_id' name='select_id' size='32'><br>
         <br>
-        <label for='sexo'>Sexo</label><br>
-        <input type='radio'id='masculino' name='genero' valor='Masculino'>
-        <label for='masculino'>Masculino</label><br>
-        <input type='radio'id='femenino' name='genero' valor='Femenino'>
-        <label for='femenino'>Femenino</label><br>
-        <input type='radio'id='otro' name='genero' valor='Otro'>
-        <label for='otro'>Otro</label><br>
-        <br>    
-        <label for='foto'>Incluir mi foto</label><br>
-        <input type='file' id='foto' name='foto'><br>
-        <br>
-        <label for='estudiante_check'>Estudiante</label><br>
-        <input type='radio'id='estudiante_check' name='estudiante_check' valor='es_estudiante'>
-        <fieldset>
-            <legend>Datos Personales</legend>
-            <label for='departamento'>Departamento</label><br>
-            <select id='departamento' name='departamento'>
-                <option value='-Seleccionar-'>-Seleccionar-</option>
-                <option value='Amazonas'>Amazonas</option>
-                <option value='Antioquia'>Antioquia</option>
-                <option value='Arauca'>Arauca</option>
-                <option value='Atlántico'>Atlántico</option>
-                <option value='Bolívar'>Bolívar</option>
-                <option value='Boyacá'>Boyacá</option>
-                <option value='Caldas'>Caldas</option>
-                <option value='Caquetá'>Caquetá</option>
-                <option value='Casanare'>Casanare</option>
-                <option value='Cauca'>Cauca</option>
-                <option value='Cesar'>Cesar</option>
-                <option value='Chocó'>Chocó</option>
-                <option value='Córdoba'>Córdoba</option>
-                <option value='Cundinamarca'>Cundinamarca</option>
-                <option value='Guainía'>Guainía</option>
-                <option value='Guaviare'>Guaviare</option>
-                <option value='Huila'>Huila</option>
-                <option value='La Guajira'>La Guajira</option>
-                <option value='Magdalena'>Magdalena</option>
-                <option value='Meta'>Meta</option>
-                <option value='Nariño'>Nariño</option>
-                <option value='Norte'>Norte</option>
-                <option value='Putumayo'>Putumayo</option>
-                <option value='Quindio'>Quindio</option>
-                <option value='Risaralda'>Risaralda</option>
-                <option value='San Andres y Providencia'>San Andres y Providencia</option>
-                <option value='Santander'>Santander</option>
-                <option value='Sucre'>Sucre</option>
-                <option value='Tolima'>Tolima</option>
-                <option value='Valle'>Valle</option>
-                <option value='Vaupés'>Vaupés</option>
-                <option value='Vichada'>Vichada</option>
-            </select><br>
-            <label for='f_nacimiento'>Fecha de nacimiento</label><br>
-            <input type='number' id='f_nacimiento_dia' nombre='f_nacimiento_dia' max='31' min='1' size='5'>
-            <span id='lista_meses'>
+        <from id='form'>
+            <label for='fname'>Nombre</label><br>
+            <input type='text' id='fname' name='fname' size='40'><br>
+            <label for='lname'>Apellidos</label><br>
+            <input type='text' id='lname' name='lname' size='40'><br>
+            <label for='password'>Contraseña</label><br>
+            <input type='password' id='password' name='password' size='40'><br>
+            <br>
+            <label for='confirm_password'>Confirme su Contraseña</label><br>
+            <input type='password' id='confirm_password' name='confirm_password' size='40'><br>
+            <label for='select_id'>Identificacion</label><br>
+            <select id='select_id' name='select_id'>
+                <option value='TI'>TI</option>
+                <option value='CC'>CC</option>
+                <option value='CE'>CE</option>
+            </select>
+            <input type='text' id='num_id' name='select_id' size='32'><br>
+            <br>
+            <label for='sexo'>Sexo</label><br>
+            <input type='radio'id='masculino' name='genero' valor='Masculino'>
+            <label for='masculino'>Masculino</label><br>
+            <input type='radio'id='femenino' name='genero' valor='Femenino'>
+            <label for='femenino'>Femenino</label><br>
+            <input type='radio'id='otro' name='genero' valor='Otro'>
+            <label for='otro'>Otro</label><br>
+            <br>    
+            <label for='foto'>Incluir mi foto</label><br>
+            <input type='file' id='foto' name='foto'><br>
+            <br>
+            <label for='estudiante_check'>Estudiante</label><br>
+            <input type='radio'id='estudiante_check' name='estudiante_check' valor='es_estudiante'>
+            <fieldset>
+                <legend>Datos Personales</legend>
+                <label for='departamento'>Departamento</label><br>
+                <select id='departamento' name='departamento'>
+                    <option value='-Seleccionar-'>-Seleccionar-</option>
+                    <option value='Amazonas'>Amazonas</option>
+                    <option value='Antioquia'>Antioquia</option>
+                    <option value='Arauca'>Arauca</option>
+                    <option value='Atlántico'>Atlántico</option>
+                    <option value='Bolívar'>Bolívar</option>
+                    <option value='Boyacá'>Boyacá</option>
+                    <option value='Caldas'>Caldas</option>
+                    <option value='Caquetá'>Caquetá</option>
+                    <option value='Casanare'>Casanare</option>
+                    <option value='Cauca'>Cauca</option>
+                    <option value='Cesar'>Cesar</option>
+                    <option value='Chocó'>Chocó</option>
+                    <option value='Córdoba'>Córdoba</option>
+                    <option value='Cundinamarca'>Cundinamarca</option>
+                    <option value='Guainía'>Guainía</option>
+                    <option value='Guaviare'>Guaviare</option>
+                    <option value='Huila'>Huila</option>
+                    <option value='La Guajira'>La Guajira</option>
+                    <option value='Magdalena'>Magdalena</option>
+                    <option value='Meta'>Meta</option>
+                    <option value='Nariño'>Nariño</option>
+                    <option value='Norte'>Norte</option>
+                    <option value='Putumayo'>Putumayo</option>
+                    <option value='Quindio'>Quindio</option>
+                    <option value='Risaralda'>Risaralda</option>
+                    <option value='San Andres y Providencia'>San Andres y Providencia</option>
+                    <option value='Santander'>Santander</option>
+                    <option value='Sucre'>Sucre</option>
+                    <option value='Tolima'>Tolima</option>
+                    <option value='Valle'>Valle</option>
+                    <option value='Vaupés'>Vaupés</option>
+                    <option value='Vichada'>Vichada</option>
+                </select><br>
+                <label for='f_nacimiento'>Fecha de nacimiento</label><br>
+                <input type='number' id='f_nacimiento_dia' nombre='f_nacimiento_dia' max='31' min='1' size='5'>
+                <span id='lista_meses'>
+                    <label>de</label>
+                    <select id='f_nacimiento_mes' name='f_nacimiento_mes'>
+                        <option value='Enero'>Enero</option>
+                        <option value='Febrero'>Febrero</option>
+                        <option value='Marzo'>Marzo</option>
+                        <option value='Abril'>Abril</option>
+                        <option value='Mayo'>Mayo</option>
+                        <option value='Junio'>Junio</option>
+                        <option value='Julio'>Julio</option>
+                        <option value='Agosto'>Agosto</option>
+                        <option value='Septiembre'>Septiembre</option>
+                        <option value='Octubre'>Octubre</option>
+                        <option value='Noviembre'>Noviembre</option>
+                        <option value='Diciembre'>Diciembre</option>
+                        </select>
+                </span>
                 <label>de</label>
-                <select id='f_nacimiento_mes' name='f_nacimiento_mes'>
-                    <option value='Enero'>Enero</option>
-                    <option value='Febrero'>Febrero</option>
-                    <option value='Marzo'>Marzo</option>
-                    <option value='Abril'>Abril</option>
-                    <option value='Mayo'>Mayo</option>
-                    <option value='Junio'>Junio</option>
-                    <option value='Julio'>Julio</option>
-                    <option value='Agosto'>Agosto</option>
-                    <option value='Septiembre'>Septiembre</option>
-                    <option value='Octubre'>Octubre</option>
-                    <option value='Noviembre'>Noviembre</option>
-                    <option value='Diciembre'>Diciembre</option>
-                    </select>
-            </span>
-            <label>de</label>
-            <input type='month' id='f_nacimiento_ano' nombre='f_nacimiento_ano'>
-        </fieldset>
-
-    </from>
+                <input type='month' id='f_nacimiento_ano' nombre='f_nacimiento_ano'><br>
+                <label for='temas_interes'>Temas de Interes</label><br>
+                <textarea readonly='True' rows='6' cols="40">
+Administracion de bases de Datos
+Analisis y programacion
+Arquitectura
+Calidad 
+ERP, CRM, Business Intelligence
+Gestion de proyectos
+Hardware, redes y seguridad
+Helpdesk
+Sistemas
+Telecomunicaciones
+                </textarea>
+            </fieldset>
+        </from>
+        </div>
+    </div>
 </body>
