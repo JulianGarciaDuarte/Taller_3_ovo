@@ -1,8 +1,10 @@
+<!DOCTYPE html>
 <html>
 <head>
 <title> 
 Taller 3
 </title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 <body>
     <h1 style="color: black; font-size: 20px;">INICIAR SESION</h1>
@@ -13,22 +15,23 @@ Taller 3
 	<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1024px-HTML5_logo_and_wordmark.svg.png'
 	alt='' width='250' height='250'/>
 	
-	<form action='registro.php' method='get'>
-	  <p> Nombre de usuario <input type='text' name='nombre' size='40'> 
-	      Contraseña <input type='text' name='Contrasena' size='20'>
-		  <input type='submit' value='Entrar'>
-	  </p>  
+	<p></p>
+	
+	<form>
+		<label for='nombre'>Nombre de usuario </label> <input type='text' class='nombre' size='40' required> 
+		<label for='Contrasena'>Contraseña </label> <input type='password' name='Contrasena' size='18' required>
+		<a class='btn btn-outline-dark btn-sm' href='menu.html'>Entrar</a> 
 	</form>
+	
+	<p></p>
 	
 	¿Ha olvidado su contraseña? Haga click <a href ='https://www.youtube.com/watch?v=Kt-tLuszKBA&list=RDMM0-7IHOXkiV8&index=0'
 	target='_blank'> aqui </a>
 	
-	<p>
-	</p>
+	<p></p>
 	
 	Desarrollado por la <a href ='https://www.uis.edu.co/webUIS/es/index.jsp'target='_blank'> 
 	Universidad Industrial de Santander </a>
-	
 </body>
 
 
